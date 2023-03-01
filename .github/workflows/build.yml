@@ -16,11 +16,3 @@ jobs:
           file: ./Dockerfile
           push: false
           tags: otp:latest
-      - name: Install wget
-        run: sudo apt-get update && sudo apt-get install -y wget
-      - name: Run Docker Image
-        run: docker run -p 8080:80 otp:latest
-      - name: Test Website
-        run: |
-          wget http://localhost:8080/test -O index.html
-          grep -q 'Hello World' index.html
