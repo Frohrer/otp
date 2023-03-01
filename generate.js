@@ -14,6 +14,10 @@ let app = express();
 
 let PORT = 8080;
 
+app.get('/test', (req, res) => {
+    res.send('Hello World');
+  });
+
 app.get('/', async function(req, res){
     let custom_html = await document_maker()
     let pdf_dir = join(`${__dirname}/tmp/${generateRandomString(10)}.pdf`)
